@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: busybox-demo
+spec:
+  selector:
+    app: busybox-demo
+  ports:
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 80  # BusyBox isn't listening, but fine for testing Argo
+  type: ClusterIP
