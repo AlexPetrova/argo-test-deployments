@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: http-echo
-        image: hashicorp/http-echo:0.2.3   # Change tag to trigger Argo
+        image: hashicorp/http-echo:0.1.1   # Change tag to trigger Argo
         args:
           - "-text=Hello from http-echo"
         ports:
