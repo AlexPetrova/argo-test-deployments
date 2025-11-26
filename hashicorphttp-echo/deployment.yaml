@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-echo-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-echo-demo
+  template:
+    metadata:
+      labels:
+        app: http-echo-demo
+    spec:
+      containers:
+      - name: http-echo
+        image: hashicorp/http-echo:0.2.3   # Change tag to trigger Argo
+        args:
+          - "-text=Hello from http-echo"
+        ports:
+          - containerPort: 5678
